@@ -17,4 +17,434 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background: var(--background-image);
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--color-text);
+  font-family: var(--font-page);
+  background-color: var(--background-color);
+}
+
+.header {
+  font-family: var(--font-header, fantasy);
+  font-weight: 400;
+  background-color: var(--background-color);
+  max-inline-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
+  margin-block-start: 100px;
+  border: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  margin-inline: auto;
+}
+
+.heading {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  padding-block-start: 136px;
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
+  padding-block-start: clamp(0.625rem, 0.4049rem + 0.939vw, 1.25rem);
+}
+
+.header__theme-menu {
+  padding-block: 25px;
+  padding-inline-start: 15px;
+}
+
+.theme-menu__button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.theme-menu__item:not(:last-child) {
+  padding-block-end: 7px;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  top: 2px;
+  left: -20px;
+  animation: arrow ease-in-out 0.5s infinite alternate-reverse;
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:hover {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button::after {
+  content: "";
+  display: block;
+  transform-origin: left;
+  transform: scaleX(0);
+  height: 2px;
+  background-color: var(--color-text);
+  transition: transform 0.5s;
+}
+
+.theme-menu__button:focus-visible::after {
+  outline: none;
+  opacity: 0.6;
+  transform: scaleX(1);
+}
+
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+}
+
+/* блок content */
+
+.content {
+  max-inline-size: clamp(350px, 100%, 700px);
+  padding-block: 100px 103px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  font-variation-settings: "wght" var(--weight-text);
+}
+
+.content__list-item {
+  background: var(--background-color);
+  margin-block-end: 50px;
+  border: 2px solid var(--border-color);
+  max-width: clamp(23.1875rem, 15.9912rem + 30.7042vw, 43.625rem);
+}
+
+.content__title {
+  padding: 3px 10px;
+  font-variation-settings: "wght" var(--weight-title);
+  line-height: 22px;
+  font-size: 18px;
+  min-block-size: 30px;
+}
+
+.content__image {
+  width: 100%;
+  object-fit: cover;
+  object-position: right;
+  display: block;
+  aspect-ratio: 1/1;
+  vertical-align: middle;
+}
+
+.watermark__block {
+  position: relative;
+  border-block: 2px solid var(--border-color);
+  overflow: hidden;
+  height: 700px;
+}
+
+.content__watermark {
+  font-family: var(--font-header, fantasy);
+  position: absolute;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text);
+  text-shadow: 2px 0 0 var(--color-shadow);
+  z-index: 2;
+  top: 25px;
+  right: 25px;
+}
+
+@supports (
+  (text-stroke: 1px solid var(--color-shadow)) or
+    (-webkit-text-stroke: 3px var(--color-shadow))
+) {
+  .content__watermark {
+    -webkit-text-stroke: 1px var(--color-shadow);
+    text-stroke: 1px solid var(--color-shadow);
+    text-shadow: none;
+  }
+}
+
+.text__block {
+  padding: 26px 25px 0 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.content__text {
+  font-size: 18px;
+  line-height: 21px;
+  color: var(--color-text);
+}
+
+.content__button {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-inline-end: 25px;
+  font-family: var(--font-header, fantasy);
+  color: var(--color-text);
+  font-size: 14px;
+  min-block-size: 88px;
+}
+
+.card__like-button {
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  block-size: 38px;
+  inline-size: 130px;
+  position: relative;
+}
+
+.card__icon-button {
+  align-self: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--background-color);
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--border-color);
+}
+
+.card__like-button:focus {
+  outline: none;
+}
+
+.card__like-button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.card__like-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--accent-color);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  mix-blend-mode: difference;
+}
+
+.card__like-button:hover::before {
+  transform: scaleX(1);
+}
+
+/* dialog секция */
+
+.dialog__content {
+  font-family: var(--font-header);
+  font-size: 14px;
+}
+
+.save__content {
+  display: flex;
+  justify-content: center;
+}
+
+.save__button {
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  width: 338px;
+  height: 55px;
+  line-height: 12px;
+  align-items: center;
+  padding-block-end: 7px;
+  padding-inline-start: 4px;
+  position: relative;
+}
+
+.save__button:focus {
+  outline: none;
+}
+
+.save__button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.save__button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--accent-color);
+  transform-origin: left;
+  transform: scaleX(0%);
+  transition: transform 0.5s ease-in-out;
+  mix-blend-mode: difference;
+}
+
+.save__button:hover::before {
+  transform: scaleX(100%);
+}
+
+.dialog {
+  width: 360px;
+  block-size: 195px;
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  padding: 0;
+  color: var(--color-text);
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.dialog__window {
+  line-height: 21px;
+}
+
+.modal__content {
+  display: grid;
+  grid-template-columns: 40px 234px;
+  gap: 20px;
+  padding: 30px;
+}
+
+.dialog__button {
+  inline-size: 293px;
+  block-size: 38px;
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  cursor: pointer;
+  line-height: 12px;
+  margin-inline-start: 30px;
+  position: relative;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.3);
+  backdrop-filter: blur(3px);
+}
+
+.dialog__button:focus {
+  outline: none;
+}
+
+.dialog__button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--border-color);
+}
+
+.dialog__button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--accent-color);
+  transform-origin: left;
+  transform: scaleX(0%);
+  transition: transform 0.5s ease-in-out;
+  mix-blend-mode: difference;
+}
+
+.dialog__button:hover::before {
+  transform: scaleX(100%);
+}
+
+/* фильтры для картинок */
+
+.img__filter {
+  filter: saturate(200%);
+}
+
+.img__filter-1 {
+  filter: invert(100%) sepia(0.6);
+}
+
+.img__filter-2 {
+  filter: hue-rotate(180deg) saturate(300%);
+}
+
+.img__filter-3 {
+  filter: grayscale(100%);
+}
+
+.img__filter-4 {
+  filter: sepia(0.8) contrast(250%);
+}
+
+.img__filter-5 {
+  filter: blur(6px) brightness(70%);
+}
+
+.img__filter-6 {
+  filter: contrast(250%) hue-rotate(100deg);
+}
+
+.img__filter-7 {
+  filter: sepia(0.9) blur(10px) contrast(300%);
+}
+
+/* для расширения 375 */
+
+@media (width <= 375px) {
+  .header {
+    height: 327px;
+  }
+
+  .heading {
+    padding-block-end: 10px;
+  }
+
+  .content {
+    padding-block-start: 98px;
+  }
+
+  .watermark__block {
+    height: 375px;
+  }
+
+  .save__button {
+    inline-size: 310px;
+    block-size: 85px;
+    display: flex;
+    flex-direction: column;
+    padding-block: 15px;
+  }
+
+  .save__button svg {
+    width: 28px;
+    height: 28px;
+    margin-block-end: 8px;
+  }
+
+  .dialog {
+    width: 345px;
+  }
 }

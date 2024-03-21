@@ -4,3 +4,69 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root.theme-dark {
+    --background-image: repeating-linear-gradient(to right, #000 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+    repeating-linear-gradient(to bottom, #000 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+    linear-gradient(to bottom, #007f0c .01%, #004306); 
+    --color-text: #00cc14;
+    --background-color: #000;
+    --border-color: var(--color-text);
+    --color-watermark: var(--border-color);
+    --color-shadow: var(--background-color);
+    --accent-color: var(--color-text);
+    --weight-text: 465;
+    --weight-title: 785;
+    --color-svg: var(--color-text);
+}
+
+:root.theme-light {
+    --background-image: repeating-linear-gradient(to right, #d3d3d3 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 .01%, #1a1a1a);
+      --color-text: #000;
+      --background-color: #fff;
+      --border-color: var(--color-text);
+      --weight-text: 400;
+      --weight-title: 700;
+      --color-watermark: var(--border-color);
+      --color-shadow: var(--background-color);
+      --accent-color:var(--background-color);
+      --color-svg: var(--color-text);
+}
+
+@media (prefers-color-scheme: light) {
+:root {
+    --background-image: 
+    repeating-linear-gradient(to right, #d3d3d3 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+      repeating-linear-gradient(to bottom, #d3d3d3 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+      linear-gradient(to bottom, #e7e7e7 .01%, #1a1a1a);
+    --color-text: #000;
+    --background-color: #fff;
+    --border-color: var(--color-text);
+    --color-watermark: var(--border-color);
+    --color-shadow: var(--background-color);
+    --accent-color: var(--background-color);
+    --weight-text: 400;
+    --weight-title: 700;
+    --color-svg: var(--color-text);
+}
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-image: 
+        repeating-linear-gradient(to right, #000 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+    repeating-linear-gradient(to bottom, #000 0 2px, rgba(0, 0, 0, 0) 2px 4px),
+    linear-gradient(to bottom, #007f0c .01%, #004306); 
+    --color-text: #00cc14;
+    --background-color: #000;
+    --border-color: var(--color-text);
+    --color-watermark: var(--border-color);
+    --color-shadow: var(--background-color);
+    --accent-color: var(--color-text);
+    --weight-text: 465;
+    --weight-title: 785;
+    --color-svg: var(--color-text);
+    }
+} 
