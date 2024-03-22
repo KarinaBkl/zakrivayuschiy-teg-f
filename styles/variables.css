@@ -1,6 +1,6 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-      --font-header: 'PressStart2P-Regular';
-      --font-page: 'Inter-Variable';
-      --heart-color: #ff0000;
-    }
+  --font-header: "PressStart2P", fantasy;
+  --font-page: "Inter-Variable", sans-serif;
+  --heart-color: #ff0000;
+}
