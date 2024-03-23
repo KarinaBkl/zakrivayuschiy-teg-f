@@ -74,7 +74,7 @@
   font-size: 14px;
   text-transform: uppercase;
   position: relative;
-  transition: color 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__item:not(:last-child) {
@@ -103,7 +103,6 @@
 .theme-menu__button:hover {
   outline: none;
   opacity: 0.6;
-  transition: color 0.3s ease;
 }
 
 .theme-menu__button::after {
@@ -229,15 +228,15 @@
   border: 2px solid var(--border-color);
   cursor: pointer;
   position: relative;
-  transition: transform 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .card__icon-button {
   border: 2px solid transparent;
-  outline: none; 
-  cursor: pointer; 
+  outline: none;
+  cursor: pointer;
   background-color: var(--background-color);
-  transition: fill 0.3s ease;
+  transition: border 0.3s ease;
   padding: 0;
   block-size: 38px;
   display: flex;
@@ -411,7 +410,6 @@ dialog::backdrop {
   .save__button svg {
     width: 28px;
     height: 28px;
-    margin-block-end: 8px;
   }
 
   .dialog {
